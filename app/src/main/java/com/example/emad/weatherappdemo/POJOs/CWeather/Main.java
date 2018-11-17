@@ -4,6 +4,8 @@ package com.example.emad.weatherappdemo.POJOs.CWeather;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Objects;
+
 public class Main {
 
     @SerializedName("temp")
@@ -62,4 +64,21 @@ public class Main {
         this.tempMax = tempMax;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Main main = (Main) o;
+        return Objects.equals(temp, main.temp) &&
+                Objects.equals(pressure, main.pressure) &&
+                Objects.equals(humidity, main.humidity) &&
+                Objects.equals(tempMin, main.tempMin) &&
+                Objects.equals(tempMax, main.tempMax);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(temp, pressure, humidity, tempMin, tempMax);
+    }
 }

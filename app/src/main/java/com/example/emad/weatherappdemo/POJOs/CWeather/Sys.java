@@ -4,6 +4,8 @@ package com.example.emad.weatherappdemo.POJOs.CWeather;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Objects;
+
 public class Sys {
 
     @SerializedName("type")
@@ -73,4 +75,22 @@ public class Sys {
         this.sunset = sunset;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Sys sys = (Sys) o;
+        return Objects.equals(type, sys.type) &&
+                Objects.equals(id, sys.id) &&
+                Objects.equals(message, sys.message) &&
+                Objects.equals(country, sys.country) &&
+                Objects.equals(sunrise, sys.sunrise) &&
+                Objects.equals(sunset, sys.sunset);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(type, id, message, country, sunrise, sunset);
+    }
 }
