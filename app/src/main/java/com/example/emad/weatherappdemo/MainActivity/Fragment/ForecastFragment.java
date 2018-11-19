@@ -46,23 +46,20 @@ public class ForecastFragment extends Fragment implements ForecastAdapter.ItemLi
 
 
         initRecyclerView(rootView);
-        initToolbar(rootView);
+
 
         final LottieAnimationView lottieAnimationView = rootView.findViewById(R.id.loading_animation_view);
+        lottieAnimationView.playAnimation();
         ForecastVModel forecastVModel = ViewModelProviders.of(this).get(ForecastVModel.class);
         mForecastLiveData = forecastVModel.getDailyForecast(String.valueOf(getArguments().getInt("CityID")));
         mForecastLiveData.observe(this, new Observer<DailyForecast>() {
             @Override
             public void onChanged(@Nullable DailyForecast dailyForecast) {
-            //    String test = dailyForecast.toString();
-
                 updateRecycler(dailyForecast.getList());
                 updateHeader(rootView, dailyForecast.getList().get(0));
-
-                if (lottieAnimationView.isAnimating()) {
-                   lottieAnimationView.pauseAnimation();
-                   lottieAnimationView.setVisibility(View.GONE);
-                }
+                initToolbar(rootView, dailyForecast.getCity().getName());
+                lottieAnimationView.pauseAnimation();
+                lottieAnimationView.setVisibility(View.GONE);
             }
         });
 
@@ -116,10 +113,11 @@ public class ForecastFragment extends Fragment implements ForecastAdapter.ItemLi
         }
     }
 
-    private void initToolbar(View view) {
+    private void initToolbar(View view, String title) {
         Toolbar toolbar = view.findViewById(R.id.forecast_fg_toolbar);
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
         ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(true);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(title);
         ToolbarShadowView toolbarShadowView = view.findViewById(R.id.forecast_fg_elevationView);
         toolbarShadowView.setRecyclerView(mRecyclerView);
         toolbarShadowView.setLineDivider(true);

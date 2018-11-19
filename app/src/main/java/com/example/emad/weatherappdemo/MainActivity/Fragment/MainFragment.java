@@ -41,7 +41,9 @@ public class MainFragment extends Fragment implements CityAdapter.ItemListener {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+
         final LottieAnimationView lottieAnimationView = rootView.findViewById(R.id.loading_animation_view);
+        lottieAnimationView.playAnimation();
 
         initRecyclerView(rootView);
         initToolbar(rootView);
@@ -50,12 +52,9 @@ public class MainFragment extends Fragment implements CityAdapter.ItemListener {
         mCitesWeather.observe(this, new Observer<ArrayList<CityWeather>>() {
             @Override
             public void onChanged(@Nullable ArrayList<CityWeather> cityWeather) {
-                String test = cityWeather.get(0).toString();
                 updateRecycler(cityWeather);
-                if (lottieAnimationView.isAnimating()) {
-                    lottieAnimationView.pauseAnimation();
-                    lottieAnimationView.setVisibility(View.GONE);
-                }
+                lottieAnimationView.pauseAnimation();
+                lottieAnimationView.setVisibility(View.GONE);
             }
         });
 
