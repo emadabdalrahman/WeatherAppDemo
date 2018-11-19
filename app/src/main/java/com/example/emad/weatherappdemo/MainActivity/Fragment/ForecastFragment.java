@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.emad.weatherappdemo.MainActivity.ForecastAdapter;
 import com.example.emad.weatherappdemo.MainActivity.VModel.ForecastVModel;
 import com.example.emad.weatherappdemo.POJOs.DForecast.DailyForecast;
@@ -46,6 +47,8 @@ public class ForecastFragment extends Fragment implements ForecastAdapter.ItemLi
 
         initRecyclerView(rootView);
         initToolbar(rootView);
+
+        final LottieAnimationView lottieAnimationView = rootView.findViewById(R.id.loading_animation_view);
         ForecastVModel forecastVModel = ViewModelProviders.of(this).get(ForecastVModel.class);
         mForecastLiveData = forecastVModel.getDailyForecast(String.valueOf(getArguments().getInt("CityID")));
         mForecastLiveData.observe(this, new Observer<DailyForecast>() {
@@ -55,6 +58,11 @@ public class ForecastFragment extends Fragment implements ForecastAdapter.ItemLi
 
                 updateRecycler(dailyForecast.getList());
                 updateHeader(rootView, dailyForecast.getList().get(0));
+
+                if (lottieAnimationView.isAnimating()) {
+                   lottieAnimationView.pauseAnimation();
+                   lottieAnimationView.setVisibility(View.GONE);
+                }
             }
         });
 

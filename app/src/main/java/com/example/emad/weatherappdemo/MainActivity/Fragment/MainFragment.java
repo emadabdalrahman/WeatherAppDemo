@@ -20,6 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.emad.weatherappdemo.MainActivity.CityAdapter;
 import com.example.emad.weatherappdemo.MainActivity.VModel.CityWeatherVModel;
 import com.example.emad.weatherappdemo.POJOs.CWeather.CityWeather;
@@ -40,6 +41,7 @@ public class MainFragment extends Fragment implements CityAdapter.ItemListener {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+        final LottieAnimationView lottieAnimationView = rootView.findViewById(R.id.loading_animation_view);
 
         initRecyclerView(rootView);
         initToolbar(rootView);
@@ -50,6 +52,10 @@ public class MainFragment extends Fragment implements CityAdapter.ItemListener {
             public void onChanged(@Nullable ArrayList<CityWeather> cityWeather) {
                 String test = cityWeather.get(0).toString();
                 updateRecycler(cityWeather);
+                if (lottieAnimationView.isAnimating()) {
+                    lottieAnimationView.pauseAnimation();
+                    lottieAnimationView.setVisibility(View.GONE);
+                }
             }
         });
 
