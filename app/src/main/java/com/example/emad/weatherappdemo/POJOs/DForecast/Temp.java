@@ -4,6 +4,9 @@ package com.example.emad.weatherappdemo.POJOs.DForecast;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * The type Temp.
+ */
 public class Temp {
 
     @SerializedName("day")
@@ -25,50 +28,110 @@ public class Temp {
     @Expose
     private float morn;
 
+    /**
+     * Gets day.
+     *
+     * @return the day
+     */
     public float getDay() {
         return day;
     }
 
+    /**
+     * Sets day.
+     *
+     * @param day the day
+     */
     public void setDay(float day) {
         this.day = day;
     }
 
+    /**
+     * Gets min.
+     *
+     * @return the min
+     */
     public float getMin() {
         return min;
     }
 
+    /**
+     * Sets min.
+     *
+     * @param min the min
+     */
     public void setMin(float min) {
         this.min = min;
     }
 
+    /**
+     * Gets max.
+     *
+     * @return the max
+     */
     public float getMax() {
         return max;
     }
 
+    /**
+     * Sets max.
+     *
+     * @param max the max
+     */
     public void setMax(float max) {
         this.max = max;
     }
 
+    /**
+     * Gets night.
+     *
+     * @return the night
+     */
     public float getNight() {
         return night;
     }
 
+    /**
+     * Sets night.
+     *
+     * @param night the night
+     */
     public void setNight(float night) {
         this.night = night;
     }
 
+    /**
+     * Gets eve.
+     *
+     * @return the eve
+     */
     public float getEve() {
         return eve;
     }
 
+    /**
+     * Sets eve.
+     *
+     * @param eve the eve
+     */
     public void setEve(float eve) {
         this.eve = eve;
     }
 
+    /**
+     * Gets morn.
+     *
+     * @return the morn
+     */
     public float getMorn() {
         return morn;
     }
 
+    /**
+     * Sets morn.
+     *
+     * @param morn the morn
+     */
     public void setMorn(float morn) {
         this.morn = morn;
     }

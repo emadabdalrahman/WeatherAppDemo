@@ -4,6 +4,9 @@ package com.example.emad.weatherappdemo.POJOs.DForecast;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * The type Coord.
+ */
 public class Coord {
 
     @SerializedName("lon")
@@ -13,18 +16,38 @@ public class Coord {
     @Expose
     private float lat;
 
+    /**
+     * Gets lon.
+     *
+     * @return the lon
+     */
     public float getLon() {
         return lon;
     }
 
+    /**
+     * Sets lon.
+     *
+     * @param lon the lon
+     */
     public void setLon(float lon) {
         this.lon = lon;
     }
 
+    /**
+     * Gets lat.
+     *
+     * @return the lat
+     */
     public float getLat() {
         return lat;
     }
 
+    /**
+     * Sets lat.
+     *
+     * @param lat the lat
+     */
     public void setLat(float lat) {
         this.lat = lat;
     }

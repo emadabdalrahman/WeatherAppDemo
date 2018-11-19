@@ -4,6 +4,9 @@ package com.example.emad.weatherappdemo.POJOs.CWeather;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * The type Sys.
+ */
 public class Sys {
 
     @SerializedName("type")
@@ -25,50 +28,110 @@ public class Sys {
     @Expose
     private int sunset;
 
+    /**
+     * Gets type.
+     *
+     * @return the type
+     */
     public int getType() {
         return type;
     }
 
+    /**
+     * Sets type.
+     *
+     * @param type the type
+     */
     public void setType(int type) {
         this.type = type;
     }
 
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     * Gets message.
+     *
+     * @return the message
+     */
     public float getMessage() {
         return message;
     }
 
+    /**
+     * Sets message.
+     *
+     * @param message the message
+     */
     public void setMessage(float message) {
         this.message = message;
     }
 
+    /**
+     * Gets country.
+     *
+     * @return the country
+     */
     public String getCountry() {
         return country;
     }
 
+    /**
+     * Sets country.
+     *
+     * @param country the country
+     */
     public void setCountry(String country) {
         this.country = country;
     }
 
+    /**
+     * Gets sunrise.
+     *
+     * @return the sunrise
+     */
     public int getSunrise() {
         return sunrise;
     }
 
+    /**
+     * Sets sunrise.
+     *
+     * @param sunrise the sunrise
+     */
     public void setSunrise(int sunrise) {
         this.sunrise = sunrise;
     }
 
+    /**
+     * Gets sunset.
+     *
+     * @return the sunset
+     */
     public int getSunset() {
         return sunset;
     }
 
+    /**
+     * Sets sunset.
+     *
+     * @param sunset the sunset
+     */
     public void setSunset(int sunset) {
         this.sunset = sunset;
     }

@@ -6,6 +6,9 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
+/**
+ * The type City weather.
+ */
 public class CityWeather {
 
     @SerializedName("coord")
@@ -45,98 +48,218 @@ public class CityWeather {
     @Expose
     private int cod;
 
+    /**
+     * Gets coord.
+     *
+     * @return the coord
+     */
     public Coord getCoord() {
         return coord;
     }
 
+    /**
+     * Sets coord.
+     *
+     * @param coord the coord
+     */
     public void setCoord(Coord coord) {
         this.coord = coord;
     }
 
+    /**
+     * Gets weather.
+     *
+     * @return the weather
+     */
     public List<Weather> getWeather() {
         return weather;
     }
 
+    /**
+     * Sets weather.
+     *
+     * @param weather the weather
+     */
     public void setWeather(List<Weather> weather) {
         this.weather = weather;
     }
 
+    /**
+     * Gets base.
+     *
+     * @return the base
+     */
     public String getBase() {
         return base;
     }
 
+    /**
+     * Sets base.
+     *
+     * @param base the base
+     */
     public void setBase(String base) {
         this.base = base;
     }
 
+    /**
+     * Gets main.
+     *
+     * @return the main
+     */
     public Main getMain() {
         return main;
     }
 
+    /**
+     * Sets main.
+     *
+     * @param main the main
+     */
     public void setMain(Main main) {
         this.main = main;
     }
 
+    /**
+     * Gets visibility.
+     *
+     * @return the visibility
+     */
     public int getVisibility() {
         return visibility;
     }
 
+    /**
+     * Sets visibility.
+     *
+     * @param visibility the visibility
+     */
     public void setVisibility(int visibility) {
         this.visibility = visibility;
     }
 
+    /**
+     * Gets wind.
+     *
+     * @return the wind
+     */
     public Wind getWind() {
         return wind;
     }
 
+    /**
+     * Sets wind.
+     *
+     * @param wind the wind
+     */
     public void setWind(Wind wind) {
         this.wind = wind;
     }
 
+    /**
+     * Gets clouds.
+     *
+     * @return the clouds
+     */
     public Clouds getClouds() {
         return clouds;
     }
 
+    /**
+     * Sets clouds.
+     *
+     * @param clouds the clouds
+     */
     public void setClouds(Clouds clouds) {
         this.clouds = clouds;
     }
 
+    /**
+     * Gets dt.
+     *
+     * @return the dt
+     */
     public int getDt() {
         return dt;
     }
 
+    /**
+     * Sets dt.
+     *
+     * @param dt the dt
+     */
     public void setDt(int dt) {
         this.dt = dt;
     }
 
+    /**
+     * Gets sys.
+     *
+     * @return the sys
+     */
     public Sys getSys() {
         return sys;
     }
 
+    /**
+     * Sets sys.
+     *
+     * @param sys the sys
+     */
     public void setSys(Sys sys) {
         this.sys = sys;
     }
 
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     * Gets name.
+     *
+     * @return the name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Sets name.
+     *
+     * @param name the name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * Gets cod.
+     *
+     * @return the cod
+     */
     public int getCod() {
         return cod;
     }
 
+    /**
+     * Sets cod.
+     *
+     * @param cod the cod
+     */
     public void setCod(int cod) {
         this.cod = cod;
     }

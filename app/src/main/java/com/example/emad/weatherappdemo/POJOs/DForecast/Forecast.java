@@ -4,6 +4,9 @@ package com.example.emad.weatherappdemo.POJOs.DForecast;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * The type Forecast.
+ */
 public class Forecast {
 
     @SerializedName("dt")
@@ -34,74 +37,164 @@ public class Forecast {
     @Expose
     private float rain;
 
+    /**
+     * Gets dt.
+     *
+     * @return the dt
+     */
     public int getDt() {
         return dt;
     }
 
+    /**
+     * Sets dt.
+     *
+     * @param dt the dt
+     */
     public void setDt(int dt) {
         this.dt = dt;
     }
 
+    /**
+     * Gets temp.
+     *
+     * @return the temp
+     */
     public Temp getTemp() {
         return temp;
     }
 
+    /**
+     * Sets temp.
+     *
+     * @param temp the temp
+     */
     public void setTemp(Temp temp) {
         this.temp = temp;
     }
 
+    /**
+     * Gets pressure.
+     *
+     * @return the pressure
+     */
     public float getPressure() {
         return pressure;
     }
 
+    /**
+     * Sets pressure.
+     *
+     * @param pressure the pressure
+     */
     public void setPressure(float pressure) {
         this.pressure = pressure;
     }
 
+    /**
+     * Gets humidity.
+     *
+     * @return the humidity
+     */
     public int getHumidity() {
         return humidity;
     }
 
+    /**
+     * Sets humidity.
+     *
+     * @param humidity the humidity
+     */
     public void setHumidity(int humidity) {
         this.humidity = humidity;
     }
 
+    /**
+     * Gets weather.
+     *
+     * @return the weather
+     */
     public java.util.List<Weather> getWeather() {
         return weather;
     }
 
+    /**
+     * Sets weather.
+     *
+     * @param weather the weather
+     */
     public void setWeather(java.util.List<Weather> weather) {
         this.weather = weather;
     }
 
+    /**
+     * Gets speed.
+     *
+     * @return the speed
+     */
     public float getSpeed() {
         return speed;
     }
 
+    /**
+     * Sets speed.
+     *
+     * @param speed the speed
+     */
     public void setSpeed(float speed) {
         this.speed = speed;
     }
 
+    /**
+     * Gets deg.
+     *
+     * @return the deg
+     */
     public int getDeg() {
         return deg;
     }
 
+    /**
+     * Sets deg.
+     *
+     * @param deg the deg
+     */
     public void setDeg(int deg) {
         this.deg = deg;
     }
 
+    /**
+     * Gets clouds.
+     *
+     * @return the clouds
+     */
     public int getClouds() {
         return clouds;
     }
 
+    /**
+     * Sets clouds.
+     *
+     * @param clouds the clouds
+     */
     public void setClouds(int clouds) {
         this.clouds = clouds;
     }
 
+    /**
+     * Gets rain.
+     *
+     * @return the rain
+     */
     public float getRain() {
         return rain;
     }
 
+    /**
+     * Sets rain.
+     *
+     * @param rain the rain
+     */
     public void setRain(float rain) {
         this.rain = rain;
     }

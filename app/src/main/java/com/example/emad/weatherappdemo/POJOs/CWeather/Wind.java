@@ -4,6 +4,9 @@ package com.example.emad.weatherappdemo.POJOs.CWeather;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * The type Wind.
+ */
 public class Wind {
 
     @SerializedName("speed")
@@ -13,18 +16,38 @@ public class Wind {
     @Expose
     private float deg;
 
+    /**
+     * Gets speed.
+     *
+     * @return the speed
+     */
     public float getSpeed() {
         return speed;
     }
 
+    /**
+     * Sets speed.
+     *
+     * @param speed the speed
+     */
     public void setSpeed(float speed) {
         this.speed = speed;
     }
 
+    /**
+     * Gets deg.
+     *
+     * @return the deg
+     */
     public float getDeg() {
         return deg;
     }
 
+    /**
+     * Sets deg.
+     *
+     * @param deg the deg
+     */
     public void setDeg(float deg) {
         this.deg = deg;
     }

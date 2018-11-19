@@ -4,6 +4,9 @@ package com.example.emad.weatherappdemo.POJOs.DForecast;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * The type Daily forecast.
+ */
 public class DailyForecast {
 
     @SerializedName("city")
@@ -22,42 +25,92 @@ public class DailyForecast {
     @Expose
     private java.util.List<Forecast> list = null;
 
+    /**
+     * Gets city.
+     *
+     * @return the city
+     */
     public City getCity() {
         return city;
     }
 
+    /**
+     * Sets city.
+     *
+     * @param city the city
+     */
     public void setCity(City city) {
         this.city = city;
     }
 
+    /**
+     * Gets cod.
+     *
+     * @return the cod
+     */
     public String getCod() {
         return cod;
     }
 
+    /**
+     * Sets cod.
+     *
+     * @param cod the cod
+     */
     public void setCod(String cod) {
         this.cod = cod;
     }
 
+    /**
+     * Gets message.
+     *
+     * @return the message
+     */
     public float getMessage() {
         return message;
     }
 
+    /**
+     * Sets message.
+     *
+     * @param message the message
+     */
     public void setMessage(float message) {
         this.message = message;
     }
 
+    /**
+     * Gets cnt.
+     *
+     * @return the cnt
+     */
     public int getCnt() {
         return cnt;
     }
 
+    /**
+     * Sets cnt.
+     *
+     * @param cnt the cnt
+     */
     public void setCnt(int cnt) {
         this.cnt = cnt;
     }
 
+    /**
+     * Gets list.
+     *
+     * @return the list
+     */
     public java.util.List<Forecast> getList() {
         return list;
     }
 
+    /**
+     * Sets list.
+     *
+     * @param list the list
+     */
     public void setList(java.util.List<Forecast> list) {
         this.list = list;
     }

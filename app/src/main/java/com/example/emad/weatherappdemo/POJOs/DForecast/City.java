@@ -4,6 +4,9 @@ package com.example.emad.weatherappdemo.POJOs.DForecast;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * The type City.
+ */
 public class City {
 
     @SerializedName("id")
@@ -22,42 +25,92 @@ public class City {
     @Expose
     private int population;
 
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     * Gets name.
+     *
+     * @return the name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Sets name.
+     *
+     * @param name the name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * Gets coord.
+     *
+     * @return the coord
+     */
     public Coord getCoord() {
         return coord;
     }
 
+    /**
+     * Sets coord.
+     *
+     * @param coord the coord
+     */
     public void setCoord(Coord coord) {
         this.coord = coord;
     }
 
+    /**
+     * Gets country.
+     *
+     * @return the country
+     */
     public String getCountry() {
         return country;
     }
 
+    /**
+     * Sets country.
+     *
+     * @param country the country
+     */
     public void setCountry(String country) {
         this.country = country;
     }
 
+    /**
+     * Gets population.
+     *
+     * @return the population
+     */
     public int getPopulation() {
         return population;
     }
 
+    /**
+     * Sets population.
+     *
+     * @param population the population
+     */
     public void setPopulation(int population) {
         this.population = population;
     }
