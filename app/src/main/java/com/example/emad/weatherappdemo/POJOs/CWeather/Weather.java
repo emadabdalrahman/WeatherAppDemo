@@ -1,6 +1,8 @@
 
 package com.example.emad.weatherappdemo.POJOs.CWeather;
 
+import android.support.annotation.NonNull;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -10,7 +12,7 @@ public class Weather {
 
     @SerializedName("id")
     @Expose
-    private Integer id;
+    private int id;
     @SerializedName("main")
     @Expose
     private String main;
@@ -21,11 +23,11 @@ public class Weather {
     @Expose
     private String icon;
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -57,16 +59,22 @@ public class Weather {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         Weather weather = (Weather) o;
-        return Objects.equals(id, weather.id) &&
-                Objects.equals(main, weather.main) &&
-                Objects.equals(description, weather.description) &&
-                Objects.equals(icon, weather.icon);
+
+        if (id != weather.id) return false;
+        if (main != null ? !main.equals(weather.main) : weather.main != null) return false;
+        if (description != null ? !description.equals(weather.description) : weather.description != null)
+            return false;
+        return icon != null ? icon.equals(weather.icon) : weather.icon == null;
     }
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(id, main, description, icon);
+        int result = id;
+        result = 31 * result + (main != null ? main.hashCode() : 0);
+        result = 31 * result + (description != null ? description.hashCode() : 0);
+        result = 31 * result + (icon != null ? icon.hashCode() : 0);
+        return result;
     }
 }

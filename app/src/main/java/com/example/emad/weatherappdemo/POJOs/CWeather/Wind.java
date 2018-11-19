@@ -1,6 +1,8 @@
 
 package com.example.emad.weatherappdemo.POJOs.CWeather;
 
+import android.support.annotation.NonNull;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -10,24 +12,24 @@ public class Wind {
 
     @SerializedName("speed")
     @Expose
-    private Float speed;
+    private float speed;
     @SerializedName("deg")
     @Expose
-    private Integer deg;
+    private float deg;
 
-    public Float getSpeed() {
+    public float getSpeed() {
         return speed;
     }
 
-    public void setSpeed(Float speed) {
+    public void setSpeed(float speed) {
         this.speed = speed;
     }
 
-    public Integer getDeg() {
+    public float getDeg() {
         return deg;
     }
 
-    public void setDeg(Integer deg) {
+    public void setDeg(float deg) {
         this.deg = deg;
     }
 
@@ -35,14 +37,17 @@ public class Wind {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         Wind wind = (Wind) o;
-        return Objects.equals(speed, wind.speed) &&
-                Objects.equals(deg, wind.deg);
+
+        if (Float.compare(wind.speed, speed) != 0) return false;
+        return Float.compare(wind.deg, deg) == 0;
     }
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(speed, deg);
+        int result = (speed != +0.0f ? Float.floatToIntBits(speed) : 0);
+        result = 31 * result + (deg != +0.0f ? Float.floatToIntBits(deg) : 0);
+        return result;
     }
 }

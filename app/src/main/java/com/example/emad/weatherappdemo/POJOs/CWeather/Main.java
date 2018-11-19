@@ -1,6 +1,8 @@
 
 package com.example.emad.weatherappdemo.POJOs.CWeather;
 
+import android.support.annotation.NonNull;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -10,57 +12,57 @@ public class Main {
 
     @SerializedName("temp")
     @Expose
-    private Float temp;
+    private float temp;
     @SerializedName("pressure")
     @Expose
-    private Integer pressure;
+    private float pressure;
     @SerializedName("humidity")
     @Expose
-    private Integer humidity;
+    private int humidity;
     @SerializedName("temp_min")
     @Expose
-    private Float tempMin;
+    private float tempMin;
     @SerializedName("temp_max")
     @Expose
-    private Float tempMax;
+    private float tempMax;
 
-    public Float getTemp() {
+    public float getTemp() {
         return temp;
     }
 
-    public void setTemp(Float temp) {
+    public void setTemp(float temp) {
         this.temp = temp;
     }
 
-    public Integer getPressure() {
+    public float getPressure() {
         return pressure;
     }
 
-    public void setPressure(Integer pressure) {
+    public void setPressure(float pressure) {
         this.pressure = pressure;
     }
 
-    public Integer getHumidity() {
+    public int getHumidity() {
         return humidity;
     }
 
-    public void setHumidity(Integer humidity) {
+    public void setHumidity(int humidity) {
         this.humidity = humidity;
     }
 
-    public Float getTempMin() {
+    public float getTempMin() {
         return tempMin;
     }
 
-    public void setTempMin(Float tempMin) {
+    public void setTempMin(float tempMin) {
         this.tempMin = tempMin;
     }
 
-    public Float getTempMax() {
+    public float getTempMax() {
         return tempMax;
     }
 
-    public void setTempMax(Float tempMax) {
+    public void setTempMax(float tempMax) {
         this.tempMax = tempMax;
     }
 
@@ -68,17 +70,23 @@ public class Main {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         Main main = (Main) o;
-        return Objects.equals(temp, main.temp) &&
-                Objects.equals(pressure, main.pressure) &&
-                Objects.equals(humidity, main.humidity) &&
-                Objects.equals(tempMin, main.tempMin) &&
-                Objects.equals(tempMax, main.tempMax);
+
+        if (Float.compare(main.temp, temp) != 0) return false;
+        if (Float.compare(main.pressure, pressure) != 0) return false;
+        if (humidity != main.humidity) return false;
+        if (Float.compare(main.tempMin, tempMin) != 0) return false;
+        return Float.compare(main.tempMax, tempMax) == 0;
     }
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(temp, pressure, humidity, tempMin, tempMax);
+        int result = (temp != +0.0f ? Float.floatToIntBits(temp) : 0);
+        result = 31 * result + (pressure != +0.0f ? Float.floatToIntBits(pressure) : 0);
+        result = 31 * result + humidity;
+        result = 31 * result + (tempMin != +0.0f ? Float.floatToIntBits(tempMin) : 0);
+        result = 31 * result + (tempMax != +0.0f ? Float.floatToIntBits(tempMax) : 0);
+        return result;
     }
 }

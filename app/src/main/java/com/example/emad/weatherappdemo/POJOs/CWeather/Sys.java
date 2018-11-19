@@ -1,6 +1,8 @@
 
 package com.example.emad.weatherappdemo.POJOs.CWeather;
 
+import android.support.annotation.NonNull;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -10,44 +12,44 @@ public class Sys {
 
     @SerializedName("type")
     @Expose
-    private Integer type;
+    private int type;
     @SerializedName("id")
     @Expose
-    private Integer id;
+    private int id;
     @SerializedName("message")
     @Expose
-    private Float message;
+    private float message;
     @SerializedName("country")
     @Expose
     private String country;
     @SerializedName("sunrise")
     @Expose
-    private Integer sunrise;
+    private int sunrise;
     @SerializedName("sunset")
     @Expose
-    private Integer sunset;
+    private int sunset;
 
-    public Integer getType() {
+    public int getType() {
         return type;
     }
 
-    public void setType(Integer type) {
+    public void setType(int type) {
         this.type = type;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public Float getMessage() {
+    public float getMessage() {
         return message;
     }
 
-    public void setMessage(Float message) {
+    public void setMessage(float message) {
         this.message = message;
     }
 
@@ -59,19 +61,19 @@ public class Sys {
         this.country = country;
     }
 
-    public Integer getSunrise() {
+    public int getSunrise() {
         return sunrise;
     }
 
-    public void setSunrise(Integer sunrise) {
+    public void setSunrise(int sunrise) {
         this.sunrise = sunrise;
     }
 
-    public Integer getSunset() {
+    public int getSunset() {
         return sunset;
     }
 
-    public void setSunset(Integer sunset) {
+    public void setSunset(int sunset) {
         this.sunset = sunset;
     }
 
@@ -79,18 +81,25 @@ public class Sys {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         Sys sys = (Sys) o;
-        return Objects.equals(type, sys.type) &&
-                Objects.equals(id, sys.id) &&
-                Objects.equals(message, sys.message) &&
-                Objects.equals(country, sys.country) &&
-                Objects.equals(sunrise, sys.sunrise) &&
-                Objects.equals(sunset, sys.sunset);
+
+        if (type != sys.type) return false;
+        if (id != sys.id) return false;
+        if (Float.compare(sys.message, message) != 0) return false;
+        if (sunrise != sys.sunrise) return false;
+        if (sunset != sys.sunset) return false;
+        return country != null ? country.equals(sys.country) : sys.country == null;
     }
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(type, id, message, country, sunrise, sunset);
+        int result = type;
+        result = 31 * result + id;
+        result = 31 * result + (message != +0.0f ? Float.floatToIntBits(message) : 0);
+        result = 31 * result + (country != null ? country.hashCode() : 0);
+        result = 31 * result + sunrise;
+        result = 31 * result + sunset;
+        return result;
     }
 }
