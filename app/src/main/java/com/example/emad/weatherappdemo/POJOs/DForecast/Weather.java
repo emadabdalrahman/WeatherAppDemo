@@ -1,6 +1,8 @@
 
 package com.example.emad.weatherappdemo.POJOs.DForecast;
 
+import android.support.annotation.NonNull;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -51,4 +53,26 @@ public class Weather {
         this.icon = icon;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Weather weather = (Weather) o;
+
+        if (id != weather.id) return false;
+        if (main != null ? !main.equals(weather.main) : weather.main != null) return false;
+        if (description != null ? !description.equals(weather.description) : weather.description != null)
+            return false;
+        return icon != null ? icon.equals(weather.icon) : weather.icon == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + (main != null ? main.hashCode() : 0);
+        result = 31 * result + (description != null ? description.hashCode() : 0);
+        result = 31 * result + (icon != null ? icon.hashCode() : 0);
+        return result;
+    }
 }

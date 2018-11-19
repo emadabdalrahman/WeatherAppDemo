@@ -1,10 +1,12 @@
 
 package com.example.emad.weatherappdemo.POJOs.DForecast;
 
+import android.support.annotation.NonNull;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class ForecastList {
+public class Forecast {
 
     @SerializedName("dt")
     @Expose
@@ -106,4 +108,35 @@ public class ForecastList {
         this.rain = rain;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Forecast forecast = (Forecast) o;
+
+        if (dt != forecast.dt) return false;
+        if (Float.compare(forecast.pressure, pressure) != 0) return false;
+        if (humidity != forecast.humidity) return false;
+        if (Float.compare(forecast.speed, speed) != 0) return false;
+        if (deg != forecast.deg) return false;
+        if (clouds != forecast.clouds) return false;
+        if (Float.compare(forecast.rain, rain) != 0) return false;
+        if (temp != null ? !temp.equals(forecast.temp) : forecast.temp != null) return false;
+        return weather != null ? weather.equals(forecast.weather) : forecast.weather == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = dt;
+        result = 31 * result + (temp != null ? temp.hashCode() : 0);
+        result = 31 * result + (pressure != +0.0f ? Float.floatToIntBits(pressure) : 0);
+        result = 31 * result + humidity;
+        result = 31 * result + (weather != null ? weather.hashCode() : 0);
+        result = 31 * result + (speed != +0.0f ? Float.floatToIntBits(speed) : 0);
+        result = 31 * result + deg;
+        result = 31 * result + clouds;
+        result = 31 * result + (rain != +0.0f ? Float.floatToIntBits(rain) : 0);
+        return result;
+    }
 }
