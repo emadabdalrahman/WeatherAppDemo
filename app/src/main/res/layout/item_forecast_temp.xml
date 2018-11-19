@@ -108,7 +108,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toStartOf="@+id/humidity_view_text"
         app:layout_constraintTop_toBottomOf="@+id/humidity_view_text"
-        android:src="@drawable/vector_drawable_wi_raindrops" />
+        android:src="@drawable/vector_drawable_wi_raindrops_mine" />
 
     <TextView
         android:id="@+id/textView2"
