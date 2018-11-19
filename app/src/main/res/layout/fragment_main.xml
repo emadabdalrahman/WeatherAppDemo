@@ -41,6 +41,7 @@
         android:scaleType="centerInside"
         app:lottie_autoPlay="false"
         app:lottie_loop="true"
+        app:lottie_colorFilter="@android:color/white"
         app:lottie_rawRes="@raw/simple" />
 
 </android.support.constraint.ConstraintLayout>

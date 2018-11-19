@@ -57,7 +57,8 @@
         android:scaleType="centerInside"
         app:lottie_autoPlay="false"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/simple" />
+        app:lottie_colorFilter="@android:color/white"
+        app:lottie_rawRes="@raw/waiting" />
 </android.support.design.widget.CoordinatorLayout>
 
 
