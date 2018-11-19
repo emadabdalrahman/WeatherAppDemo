@@ -7,7 +7,6 @@
     tools:background="@color/colorPrimaryDark"
     tools:ignore="SpUsage,UnusedAttribute,ContentDescription">
 
-
     <ImageView
         android:id="@+id/main_weather_state_img"
         android:layout_width="120dp"
@@ -40,7 +39,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toEndOf="@+id/temperature_text"
         app:layout_constraintTop_toTopOf="@+id/temperature_text"
-        tools:src="@drawable/ic_w_celsius" />
+        android:src="@drawable/ic_w_celsius" />
 
     <TextView
         android:id="@+id/temperature_view_text_max_temp"
@@ -73,7 +72,7 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintStart_toEndOf="@+id/temperature_text"
-        tools:src="@drawable/ic_arrow_upward_white_36dp" />
+        android:src="@drawable/ic_arrow_upward_white_36dp" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -82,7 +81,7 @@
         android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toBottomOf="@+id/temperature_text"
         app:layout_constraintStart_toEndOf="@+id/temperature_text"
-        tools:src="@drawable/ic_arrow_downward_white_36dp" />
+        android:src="@drawable/ic_arrow_downward_white_36dp" />
 
     <TextView
         android:id="@+id/temperature_text"
@@ -125,7 +124,7 @@
         android:textSize="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView5"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
-        tools:text="Visibility" />
+        android:text="@string/visibility_text" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -134,7 +133,7 @@
         android:layout_marginTop="26dp"
         app:layout_constraintStart_toStartOf="@+id/temperature_text"
         app:layout_constraintTop_toBottomOf="@+id/temperature_text"
-        tools:src="@drawable/ic_visibility_white_48dp" />
+        android:src="@drawable/ic_visibility_white_48dp" />
 
 
     <ImageView
@@ -146,7 +145,7 @@
         android:scaleType="center"
         app:layout_constraintStart_toStartOf="@+id/main_weather_state_img"
         app:layout_constraintTop_toBottomOf="@+id/main_weather_state_img"
-        tools:src="@drawable/vector_drawable_wi_raindrops" />
+        android:src="@drawable/vector_drawable_wi_raindrops" />
 
     <TextView
         android:id="@+id/textView2"
@@ -160,7 +159,7 @@
         android:textSize="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
-        tools:text="Humidity" />
+        android:text="@string/humidity_text" />
 
     <TextView
         android:id="@+id/humidity_text"
