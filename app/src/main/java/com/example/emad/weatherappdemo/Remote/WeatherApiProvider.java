@@ -1,7 +1,7 @@
 package com.example.emad.weatherappdemo.Remote;
 
 
-import com.example.emad.weatherappdemo.POJOs.CWeather.CurrentWeather;
+import com.example.emad.weatherappdemo.POJOs.CWeather.CityWeather;
 import com.example.emad.weatherappdemo.POJOs.DForecast.DailyForecast;
 
 import retrofit2.Call;
@@ -12,21 +12,21 @@ public class WeatherApiProvider {
 
     private static String BASE_URI = "https://api.openweathermap.org/data/2.5/";
 
-    public static Call<CurrentWeather> getCurrentWeather() {
+    public static Call<CityWeather> getCurrentWeather(String cityID) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URI)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         WeatherApiService weatherApiService = retrofit.create(WeatherApiService.class);
-       return weatherApiService.getCurrentWeather("361058");
+       return weatherApiService.getCurrentWeather(cityID);
     }
 
-    public static Call<DailyForecast> getDailyForecast() {
+    public static Call<DailyForecast> getDailyForecast(String cityID) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URI)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         WeatherApiService weatherApiService = retrofit.create(WeatherApiService.class);
-       return weatherApiService.getDailyForecast("361058");
+       return weatherApiService.getDailyForecast(cityID);
     }
 }
