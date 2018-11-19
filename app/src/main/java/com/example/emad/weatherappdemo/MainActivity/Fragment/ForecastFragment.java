@@ -17,10 +17,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.emad.weatherappdemo.MainActivity.CityAdapter;
 import com.example.emad.weatherappdemo.MainActivity.ForecastAdapter;
 import com.example.emad.weatherappdemo.MainActivity.VModel.ForecastVModel;
-import com.example.emad.weatherappdemo.POJOs.CWeather.CityWeather;
 import com.example.emad.weatherappdemo.POJOs.DForecast.DailyForecast;
 import com.example.emad.weatherappdemo.POJOs.DForecast.Forecast;
 import com.example.emad.weatherappdemo.R;
@@ -30,7 +28,6 @@ import com.example.emad.weatherappdemo.WeatherIconFactory;
 import com.github.ahmadnemati.wind.WindView;
 import com.github.ahmadnemati.wind.enums.TrendType;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import androidx.navigation.fragment.NavHostFragment;

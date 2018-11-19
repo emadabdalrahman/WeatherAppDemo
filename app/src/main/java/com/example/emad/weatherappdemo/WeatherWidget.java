@@ -1,16 +1,12 @@
 package com.example.emad.weatherappdemo;
 
 import android.annotation.SuppressLint;
-import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 import android.widget.RemoteViews;
-import android.widget.Toast;
 
-import com.example.emad.weatherappdemo.MainActivity.MainActivity;
 import com.example.emad.weatherappdemo.POJOs.CWeather.CityWeather;
 import com.example.emad.weatherappdemo.Remote.WeatherApiProvider;
 

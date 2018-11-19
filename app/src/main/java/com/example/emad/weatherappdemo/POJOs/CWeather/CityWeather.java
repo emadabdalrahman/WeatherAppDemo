@@ -1,13 +1,10 @@
 
 package com.example.emad.weatherappdemo.POJOs.CWeather;
 
-import android.support.annotation.NonNull;
-
-import java.util.List;
-import java.util.Objects;
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
 
 public class CityWeather {
 

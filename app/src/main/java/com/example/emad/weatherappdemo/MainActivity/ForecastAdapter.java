@@ -10,13 +10,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.emad.weatherappdemo.POJOs.CWeather.CityWeather;
 import com.example.emad.weatherappdemo.POJOs.DForecast.Forecast;
 import com.example.emad.weatherappdemo.R;
 import com.example.emad.weatherappdemo.UnitConverter;
 import com.example.emad.weatherappdemo.WeatherIconFactory;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.VHolder> {

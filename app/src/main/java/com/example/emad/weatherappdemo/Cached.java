@@ -1,14 +1,11 @@
 package com.example.emad.weatherappdemo;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.SystemClock;
 
 import com.example.emad.weatherappdemo.POJOs.CWeather.CityWeather;
 import com.example.emad.weatherappdemo.POJOs.DForecast.DailyForecast;
-import com.example.emad.weatherappdemo.POJOs.DForecast.Forecast;
-import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 public class Cached {
