@@ -55,7 +55,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerInside"
-        app:lottie_autoPlay="true"
+        app:lottie_autoPlay="false"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/simple" />
 </android.support.design.widget.CoordinatorLayout>
