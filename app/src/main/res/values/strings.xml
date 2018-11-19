@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">WeatherAppDemo</string>
+    <string name="humidity_text">Humidity</string>
+    <string name="visibility_text">Visibility</string>
 </resources>
