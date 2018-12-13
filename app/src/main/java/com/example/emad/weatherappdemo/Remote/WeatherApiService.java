@@ -9,7 +9,7 @@ import retrofit2.http.Query;
 
 public interface WeatherApiService  {
 
-    String API_KEY = "56a67941c4c376d90bb1a6d9e97e6ff8";
+    String API_KEY = "";
 
     @GET("forecast/daily?units=metric&appid="+API_KEY)
     Call<DailyForecast> getDailyForecast(@Query("id")String cityID);
